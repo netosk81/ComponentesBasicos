@@ -36,14 +36,31 @@ public class MainActivity extends AppCompatActivity {
 
     public void checkBox(){
 
-        boolean resultadoVerde = checkVerde.isChecked();
-        textResultado.setText("Verde: " + resultadoVerde);
+        String texto = "";
+        //String corSelecionada = checkVerde.getText().toString();
+        //texto = corSelecionada;
 
-        boolean resultadoBranco = checkBranco.isChecked();
-        textResultado.setText("Branco: " + resultadoBranco);
+       /*   boolean resultadoVerde = checkVerde.isChecked();
+            textResultado.setText("Verde: " + resultadoVerde);
+            boolean resultadoBranco = checkBranco.isChecked();
+            textResultado.setText("Branco: " + resultadoBranco);
+            boolean resultadoVermelho = checkVermelho.isChecked();
+            textResultado.setText("Vermelho: " + resultadoVermelho);
+        */
 
-        boolean resultadoVermelho = checkVermelho.isChecked();
-        textResultado.setText("Vermelho: " + resultadoVermelho);
+        if (checkVerde.isChecked()){
+            //String corSelecionada = checkVerde.getText().toString();
+            //texto = corSelecionada;
+            texto = "Verde Selecionado - ";
+        }
+        if (checkBranco.isChecked()){
+            texto = texto + "Branco Selecionado - ";
+        }
+        if (checkVermelho.isChecked()){
+            texto = texto + "Vermelho Selecionado - ";
+        }
+
+        textResultado.setText( texto );
 
 
     }
