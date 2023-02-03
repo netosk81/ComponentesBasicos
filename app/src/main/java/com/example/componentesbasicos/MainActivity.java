@@ -37,13 +37,13 @@ public class MainActivity extends AppCompatActivity {
     public void checkBox(){
 
         boolean resultadoVerde = checkVerde.isChecked();
-        textResultado.setText("Verde selecionado");
+        textResultado.setText("Verde: " + resultadoVerde);
 
         boolean resultadoBranco = checkBranco.isChecked();
-        textResultado.setText("Branco selecionado");
+        textResultado.setText("Branco: " + resultadoBranco);
 
         boolean resultadoVermelho = checkVermelho.isChecked();
-        textResultado.setText("Vermelho selecionado");
+        textResultado.setText("Vermelho: " + resultadoVermelho);
 
 
     }
