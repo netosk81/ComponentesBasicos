@@ -5,28 +5,61 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.android.material.textfield.TextInputEditText;
+
 public class MainActivity extends AppCompatActivity {
+
+    private EditText campoNome;
+    private TextInputEditText campoEmail;
+    private TextView textResultado;
+
+    private CheckBox checkVerde, checkBranco, checkVermelho;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        campoNome       = findViewById(R.id.edtNome);
+        campoEmail      = findViewById(R.id.edtEmail);
+        textResultado   = findViewById(R.id.txtResultado);
+
+        checkVerde      = findViewById(R.id.checkVerde);
+        checkBranco     = findViewById(R.id.checkBranco);
+        checkVermelho   = findViewById(R.id.checkVermelho);
+
+    }
+
+    public void checkBox(){
+
+        boolean resultadoVerde = checkVerde.isChecked();
+        textResultado.setText("Verde selecionado");
+
+        boolean resultadoBranco = checkBranco.isChecked();
+        textResultado.setText("Branco selecionado");
+
+        boolean resultadoVermelho = checkVermelho.isChecked();
+        textResultado.setText("Vermelho selecionado");
+
+
     }
 
     public void enviar(View view){
 
-        EditText campoNome = findViewById(R.id.edtNome);
-        EditText campoEmail = findViewById(R.id.edtEmail);
-        TextView textResultado = findViewById(R.id.txtResultado);
+        checkBox();
 
+        //String nome = campoNome.getText().toString();
+        //String email = campoEmail.getText().toString();
+        //textResultado.setText("Nome: " + nome + " \n " + "Email: " + email);
 
-        String nome = campoNome.getText().toString();
-        textResultado.setText(nome);
-
-
+    }
+    public void limpar(View view){
+        campoNome.setText("");
+        campoEmail.setText("");
 
     }
 
