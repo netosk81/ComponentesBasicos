@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.google.android.material.textfield.TextInputEditText;
@@ -20,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
     private CheckBox checkVerde, checkBranco, checkVermelho;
     private RadioButton sexoMasc, sexoFem;
+    private RadioGroup opcaosexo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,23 +38,42 @@ public class MainActivity extends AppCompatActivity {
 
         sexoMasc        = findViewById(R.id.radioMasc);
         sexoFem         = findViewById(R.id.radioFem);
+        opcaosexo       = findViewById(R.id.radioGrSex);
+
+        radioButton();
 
     }
 
     public void radioButton(){
+
+        opcaosexo.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int checkedId) {
+                
+                if (checkedId == R.id.radioMasc){
+                    textResultado.setText("Masculino");
+                } else if (checkedId == R.id.radioFem) {
+                    textResultado.setText("Feminino");
+                }
+
+            }
+        });
+
+
+
+        /*
         if (sexoMasc.isChecked()){
             textResultado.setText("Masculino");
         }else if (sexoFem.isChecked()){
             textResultado.setText("Feminino");
         }
-
+         */
     }
 
 
     public void enviar(View view){
 
-        radioButton();
-
+        //radioButton();
         //checkBox();
         //String nome = campoNome.getText().toString();
         //String email = campoEmail.getText().toString();

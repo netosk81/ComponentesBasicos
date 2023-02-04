@@ -58,6 +58,7 @@
         android:text="Sexo" />
 
     <RadioGroup
+        android:id="@+id/radioGrSex"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
