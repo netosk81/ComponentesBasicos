@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.TextView;
 
 import com.google.android.material.textfield.TextInputEditText;
@@ -18,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView textResultado;
 
     private CheckBox checkVerde, checkBranco, checkVermelho;
+    private RadioButton sexoMasc, sexoFem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +33,30 @@ public class MainActivity extends AppCompatActivity {
         checkVerde      = findViewById(R.id.checkVerde);
         checkBranco     = findViewById(R.id.checkBranco);
         checkVermelho   = findViewById(R.id.checkVermelho);
+
+        sexoMasc        = findViewById(R.id.radioMasc);
+        sexoFem         = findViewById(R.id.radioFem);
+
+    }
+
+    public void radioButton(){
+        if (sexoMasc.isChecked()){
+            textResultado.setText("Masculino");
+        }else if (sexoFem.isChecked()){
+            textResultado.setText("Feminino");
+        }
+
+    }
+
+
+    public void enviar(View view){
+
+        radioButton();
+
+        //checkBox();
+        //String nome = campoNome.getText().toString();
+        //String email = campoEmail.getText().toString();
+        //textResultado.setText("Nome: " + nome + " \n " + "Email: " + email);
 
     }
 
@@ -65,15 +91,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void enviar(View view){
-
-        checkBox();
-
-        //String nome = campoNome.getText().toString();
-        //String email = campoEmail.getText().toString();
-        //textResultado.setText("Nome: " + nome + " \n " + "Email: " + email);
-
-    }
     public void limpar(View view){
         campoNome.setText("");
         campoEmail.setText("");
