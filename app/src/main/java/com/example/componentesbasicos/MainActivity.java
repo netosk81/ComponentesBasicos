@@ -60,7 +60,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-
         /*
         if (sexoMasc.isChecked()){
             textResultado.setText("Masculino");
@@ -111,6 +110,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
 
     public void limpar(View view){
         campoNome.setText("");
